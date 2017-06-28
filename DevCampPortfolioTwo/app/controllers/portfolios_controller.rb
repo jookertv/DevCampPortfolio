@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.new
     3.times { @portfolio_item.technologies.build }
   end  
-  
+   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   def create
     @portfolio_item = Portfolio.new(portfolio_params)
     respond_to do |format|
