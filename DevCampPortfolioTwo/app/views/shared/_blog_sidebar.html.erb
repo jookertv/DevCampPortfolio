@@ -1,16 +1,27 @@
-
-         <div class="col-sm-3 offset-sm-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p> I love to program as a hobby going to become a chemical engineer and probably double major with software engineering</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Social Media</h4>
-            <ol class="list-unstyled social-links">
-              <li><a href="https://github.com/jookertv"<%= fa_icon "github" %></a></a></li>
-              <li><a href="https://www.facebook.com/jesse.mcalisterjr"<%= fa_icon "facebook" %></a></a></li>
-              <li><a href="https://www.twitter.com/jookertv"<%= fa_icon "twitter" %></a></a></li>
-              <li><a href="https://www.instagram.com/jooker100"<%= fa_icon "instagram" %></a></a></li>
-            </ol>
-          </div>
-         </div>
+  
+<div class="col-sm-3 offset-sm-1 blog-sidebar">
+  <div class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p> I love to program as a hobby going to become a chemical engineer and probably double major with software engineering</p>
+  </div>
+  
+  <%= source_helper("alert alert-info blog-sidebar-source") %>
+  
+  
+  <div class="sidebar-module">
+    <h4>Topics</h4>
+    <% @side_bar_topics.each do |topic| %>
+      <p><%= link_to topic.title, topic_path(topic) %></p>
+    <% end %>
+  </div>
+  
+  <div class="sidebar-module">
+    <h4>Social Media</h4>
+    <ol class="list-unstyled social-links">
+      <li><a href="https://github.com/jookertv"<%= fa_icon "github" %></a></a></li>
+      <li><a href="https://www.facebook.com/jesse.mcalisterjr"<%= fa_icon "facebook" %></a></a></li>
+      <li><a href="https://www.twitter.com/jookertv"<%= fa_icon "twitter" %></a></a></li>
+      <li><a href="https://www.instagram.com/jooker100"<%= fa_icon "instagram" %></a></a></li>
+    </ol>
+  </div>
+</div>

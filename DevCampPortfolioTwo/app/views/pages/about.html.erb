@@ -1,18 +1,87 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+  <div class="card">
 
-<hr> 
-
-
-<div class="row">
-  
-  <div class="col-md-4">
-    <%= image_tag "profile.jpg", width: 300, height: 300, alt: "profile image" %>
-  </div>
-  
-  <div class="col-md-8">
-    <p> My name is Jesse William Mcalister Jr.</p>
+    <h1>About Me</h1>
     
-    <p> I'm a hard working man that loves what he does, I program on the side as a hobby. I'm going to the University of Utah to get a degree in chemical engineering and hopefully one day double major in software engineering. </p>
+    <hr> 
+    
+    
+    <div class="row">
+      
+      <div class="col-md-4">
+        <%= image_tag "profile.jpg", width: 300, height: 300, alt: "profile image", class: 'profile-img' %>
+        
+        <div class="skills">
+          <% @skills.each do |skill| %>
+          <div class="skill">
+              <h4><%= skill.title %></h4>
+            <div class="progress">
+                <div 
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_utilized %>%"
+                >
+                </div>
+            </div>
+          </div>
+          
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="col-md-8">
+        <p> My name is Jesse William Mcalister Jr.</p>
+        
+        <p> I'm a hard working man that loves what he does, I program on the side as a hobby. I'm going to the University of Utah to get a degree in chemical engineering and hopefully one day double major in software engineering. </p>
+        
+        <p>
+          <button
+            class="btn btn-primary"
+            type="buton"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded="false"
+            aria-controler="jobHistory"
+          >
+            Job History
+          </button>
+          
+          <button
+            class="btn btn-primary"
+            type="buton"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="false"
+            aria-controler="education"
+          >
+            Education
+          </button>
+          
+        </p>
+        
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              Arctic Circle 
+            </div>
+            <div class="card card-block">
+              Mod Pizza
+            </div>
+          </div>
+          
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              Bountiful High School
+            </div>
+            <div class="card card-block">
+              Code to Success
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
