@@ -45,7 +45,15 @@ module ApplicationHelper
     {
      url: tech_news_path,
      title: 'Tech News'
-   }
+   },
+    {
+    url: resume_path,
+    title: 'Resume'
+   },
+    {
+     url: projects_path,
+     title: 'Projects'
+    }
   ]
  end
  
