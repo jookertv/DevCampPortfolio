@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'tech-news', to: 'pages#tech_news'
   get 'resume', to: 'pages#resume'
-  get 'projects', to: 'pages#projects'
+  get 'projects', to: 'pages#projects' 
+  get 'roll', to: 'pages#roll'
 
   resources :blogs do 
     member do 
